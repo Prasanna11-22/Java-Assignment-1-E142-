@@ -16,7 +16,6 @@ public abstract class Claim {
     public String getClaimId() { return claimId; }
     public String getStatus() { return status; }
 
-    // Abstract method (Overridden in subclasses)
     public abstract double settle();
 
     @Override
@@ -24,4 +23,5 @@ public abstract class Claim {
         return "Claim ID: " + claimId + ", Status: " + status + ", BagTag: " + baggage.getBagTag();
     }
 }
+
 
