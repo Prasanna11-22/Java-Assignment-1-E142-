@@ -9,7 +9,6 @@ public class DamageClaim extends Claim {
 
     @Override
     public double settle() {
-        // Example logic: Half compensation
         this.compensationAmount = baggage.getWeight() * 500; 
         this.status = "Settled";
         return compensationAmount;
@@ -20,4 +19,5 @@ public class DamageClaim extends Claim {
         return super.toString() + " [Damage Claim, Compensation=" + compensationAmount + "]";
     }
 }
+
 
