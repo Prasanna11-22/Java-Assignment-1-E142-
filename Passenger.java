@@ -10,7 +10,6 @@ public class Passenger {
     private String contact;
     private List<Claim> claims;
 
-    // Constructor
     public Passenger(String paxId, String name, String flightNo, String contact) {
         this.paxId = paxId;
         this.name = name;
@@ -18,15 +17,12 @@ public class Passenger {
         this.contact = contact;
         this.claims = new ArrayList<>();
     }
-
-    // Getters & Setters
     public String getPaxId() { return paxId; }
     public String getName() { return name; }
     public String getFlightNo() { return flightNo; }
     public String getContact() { return contact; }
     public List<Claim> getClaims() { return claims; }
 
-    // Methods
     public void addClaim(Claim claim) {
         claims.add(claim);
     }
@@ -38,3 +34,4 @@ public class Passenger {
         }
     }
 }
+
