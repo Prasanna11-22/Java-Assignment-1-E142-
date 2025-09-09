@@ -24,10 +24,10 @@ public class BaggageAppMain {
             System.out.println("0. Exit");
             System.out.print("Enter choice: ");
             choice = sc.nextInt();
-            sc.nextLine(); // consume newline
+            sc.nextLine();
 
             switch (choice) {
-                case 1: // Register Passenger
+                case 1:
                     System.out.print("Enter Passenger ID: ");
                     String paxId = sc.nextLine();
                     System.out.print("Enter Name: ");
@@ -40,7 +40,7 @@ public class BaggageAppMain {
                     System.out.println("Passenger registered successfully.");
                     break;
 
-                case 2: // Register Baggage
+                case 2:
                     if (currentPassenger == null) {
                         System.out.println("Register a passenger first!");
                         break;
@@ -54,7 +54,7 @@ public class BaggageAppMain {
                     service.registerBag(currentBaggage);
                     break;
 
-                case 3: // Update Movement
+                case 3:
                     if (currentBaggage == null) {
                         System.out.println("Register baggage first!");
                         break;
@@ -69,7 +69,7 @@ public class BaggageAppMain {
                     System.out.println("Movement updated.");
                     break;
 
-                case 4: // Locate Bag
+                case 4: 
                     if (currentBaggage != null) {
                         service.locateBag(currentBaggage.getBagTag());
                     } else {
@@ -77,7 +77,7 @@ public class BaggageAppMain {
                     }
                     break;
 
-                case 5: // Print route
+                case 5: 
                     if (currentBaggage != null) {
                         currentBaggage.printRoute();
                     } else {
@@ -85,7 +85,7 @@ public class BaggageAppMain {
                     }
                     break;
 
-                case 6: // Raise Loss Claim
+                case 6:
                     if (currentBaggage == null || currentPassenger == null) {
                         System.out.println("Register passenger and baggage first!");
                         break;
@@ -96,7 +96,7 @@ public class BaggageAppMain {
                     service.raiseClaim(lossClaim);
                     break;
 
-                case 7: // Raise Damage Claim
+                case 7:
                     if (currentBaggage == null || currentPassenger == null) {
                         System.out.println("Register passenger and baggage first!");
                         break;
@@ -107,7 +107,7 @@ public class BaggageAppMain {
                     service.raiseClaim(damageClaim);
                     break;
 
-                case 8: // Settle claims
+                case 8:
                     if (currentPassenger != null) {
                         service.settleClaims(currentPassenger);
                     } else {
@@ -115,7 +115,7 @@ public class BaggageAppMain {
                     }
                     break;
 
-                case 9: // Print claims
+                case 9:
                     if (currentPassenger != null) {
                         currentPassenger.printClaims();
                     } else {
@@ -135,3 +135,4 @@ public class BaggageAppMain {
         sc.close();
     }
 }
+
