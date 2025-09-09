@@ -8,14 +8,11 @@ public class BaggageService {
     public BaggageService() {
         baggageRegistry = new HashMap<>();
     }
-
-    // Register bag
+    
     public void registerBag(Baggage bag) {
         baggageRegistry.put(bag.getBagTag(), bag);
         System.out.println("Bag registered: " + bag.getBagTag());
     }
-
-    // Locate bag
     public void locateBag(String bagTag) {
         if (baggageRegistry.containsKey(bagTag)) {
             baggageRegistry.get(bagTag).locateBag();
@@ -23,14 +20,12 @@ public class BaggageService {
             System.out.println("Bag not found.");
         }
     }
-
-    // Raise claim
+    
     public void raiseClaim(Claim claim) {
         claim.passenger.addClaim(claim);
         System.out.println("Claim raised: " + claim.getClaimId() + " for passenger " + claim.passenger.getName());
     }
-
-    // Settle claims
+    
     public void settleClaims(Passenger p) {
         for (Claim c : p.getClaims()) {
             if (c.getStatus().equals("Pending")) {
@@ -40,4 +35,5 @@ public class BaggageService {
         }
     }
 }
+
 
